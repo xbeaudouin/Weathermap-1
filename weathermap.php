@@ -27,7 +27,11 @@ $daemon_args="";
 
 // **************************************************************************************
 // THIS IS THE ONE LINE IN HERE YOU MIGHT HAVE TO CHANGE!
-$rrdtool="/usr/bin/rrdtool";
+if (!empty($config['rrdtool')) {
+	$rrdtool = $config['rrdtool'];
+} else {
+	$rrdtool="/usr/bin/rrdtool";
+}
 // (on Windows, use / instead of \ in pathnames - c:/rrdtool/bin/rrdtool.exe for example)
 // **************************************************************************************
 
