@@ -530,7 +530,8 @@ class WeatherMap extends WeatherMapBase
 	{
 		# debug("ProcessString: input is $input\n");
 
-		assert('is_scalar($input)');
+		//assert('is_scalar($input)');
+		assert(is_scalar($input));
 
 		$context_description = strtolower( $context->my_type() );
 		if($context_description != "map") $context_description .= ":" . $context->name; 
