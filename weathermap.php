@@ -297,11 +297,11 @@ if ($map->ReadConfig($configfile))
 		}
 
 		fwrite($fd, $map->MakeHTML());
-		fwrite($fd,
-			'<hr /><span id="byline">Network Map created with <a href="http://www.network-weathermap.com/?vs='
-			. $WEATHERMAP_VERSION . '">PHP Network Weathermap v' . $WEATHERMAP_VERSION
-			. '</a></span></body></html>');
-		fclose ($fd);
+		// fwrite($fd,
+		// 	'<hr /><span id="byline">Network Map created with <a href="http://www.network-weathermap.com/?vs='
+		//	. $WEATHERMAP_VERSION . '">PHP Network Weathermap v' . $WEATHERMAP_VERSION
+		//	. '</a></span></body></html>');
+		// fclose ($fd);
 	}
 
 	if ($dumpconfig != '')

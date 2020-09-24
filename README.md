@@ -1,5 +1,11 @@
 This is  modified version of PHP Network Weathermap (orginal README is below)
 
+This version has been modified by Rob Collins. This version is compatible with PHP 7.2+ and libpng 1.6+. 
+overlib.js defaults have been changed to better match the look of LibreNMS overlib_mini.js. The menu for
+Overview->Plugins->Weathermap-Maps has been modified to include the editor and strip .conf from the map names.
+If a network map that begins with overview (overview*.png) is created, this will be your default map when 
+you click on Overview->Plugins->Weathermap.  
+
 The modified version starts at version 0.1 by Neil Lathwood (neil@lathwood.co.uk) for use as a plugin for LibreNMS and currently includes basic support for picking out nodes and links from your LibreNMS install. See INSTALL for details.
 
 This is PHP Network Weathermap, version 0.97b by Howard Jones (howie@thingy.com)

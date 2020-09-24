@@ -11,13 +11,21 @@ class Weathermap
     public static function menu()
     {
 
-        //Include config
+        // Include config
         include 'config.inc.php';
 
         //Parse config files
         $files = list_weathermaps($mapdir);
 
-        //Create submenu
+        // Strip .conf in title to clean up Plugins/Weathermap Menu
+        foreach ($files as $file => $data) {
+            $files[$file]['title'] = basename($data['title'], '.conf');
+        }
+
+        // Append the $files array and add the Weathermap Editor
+        $files[] = ['page'=> 'editor.php', 'title'=> 'WM Editor'];
+
+        // Create submenu
         $submenu = ' <ul class="dropdown-menu scrollable-menu">';
         $count = 0;
         foreach ($files as $file => $data) {
@@ -26,13 +34,13 @@ class Weathermap
         }
         $submenu .= ' </ul>';
 
-        //Display it if not empty
+        // Display it if not empty
         if ($count > 0) {
             echo('<li class="dropdown-submenu"><a href="plugin/p=' . self::$name . '">' . self::$name . '</a>');
             echo $submenu;
             echo('</li>');
         } else {
-            //Create menu without submenu
+            // Create menu without submenu
             echo('<li><a href="plugin/p=' . self::$name . '">' . self::$name . '</a></li>');
         }
     }
