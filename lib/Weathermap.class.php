@@ -753,7 +753,8 @@ function DatasourceInit()
 		$dsplugins[$ds_class] = new $ds_class;
 		wm_debug("Running $ds_class"."->Init()\n");
 		# $ret = call_user_func(array($ds_class, 'Init'), $this);
-		assert('isset($this->plugins["data"][$ds_class])');
+		//assert('isset($this->plugins["data"][$ds_class])');
+		assert(isset($this->plugins["data"][$ds_class]));
 
 		$ret = $this->plugins['data'][$ds_class]->Init($this);
 
