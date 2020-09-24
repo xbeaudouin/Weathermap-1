@@ -390,10 +390,10 @@ class WeatherMap extends WeatherMapBase
 //                $this->defaultlink = $this->links['DEFAULT'];
 //                $this->defaultnode = $this->nodes['DEFAULT'];
 
-                assert('is_object($this->nodes[":: DEFAULT ::"])');
-                assert('is_object($this->links[":: DEFAULT ::"])');
-				assert('is_object($this->nodes["DEFAULT"])');
-                assert('is_object($this->links["DEFAULT"])');
+                assert(is_object($this->nodes[":: DEFAULT ::"]));
+                assert(is_object($this->links[":: DEFAULT ::"]));
+				assert(is_object($this->nodes["DEFAULT"]));
+                assert(is_object($this->links["DEFAULT"]));
 
 // ************************************
 
@@ -2056,7 +2056,7 @@ function ReadConfig($input, $is_include=FALSE)
 								$val = $matches[$val];
 							}
 							
-							assert('is_object($curobj)');
+							assert(is_object($curobj));
 							
 							if(preg_match('/^(.*)\[([^\]]+)\]$/',$key,$m))
 							{
