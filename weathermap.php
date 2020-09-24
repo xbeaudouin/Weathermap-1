@@ -27,7 +27,7 @@ $daemon_args="";
 
 // **************************************************************************************
 // THIS IS THE ONE LINE IN HERE YOU MIGHT HAVE TO CHANGE!
-if (!empty($config['rrdtool')) {
+if (!empty($config['rrdtool'])) {
 	$rrdtool = $config['rrdtool'];
 } else {
 	$rrdtool="/usr/bin/rrdtool";
