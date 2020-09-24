@@ -143,7 +143,7 @@ class WeatherMapLink extends WeatherMapItem
 	function CopyFrom(&$source)
 	{
 		wm_debug("Initialising LINK $this->name from $source->name\n");
-		assert('is_object($source)');
+		assert(is_object($source));
 				
 		foreach (array_keys($this->inherit_fieldlist) as $fld) {
 			 if($fld != 'template') $this->$fld = $source->$fld;

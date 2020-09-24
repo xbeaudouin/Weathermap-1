@@ -366,8 +366,8 @@ class WeatherMapNode extends WeatherMapItem
 					$col1 = $this->colours[OUT];
 					$col2 = $this->colours[IN];
 					
-					assert('!is_null($col1)');
-					assert('!is_null($col2)');
+					assert(!is_null($col1));
+					assert(!is_null($col2));
 					
 					imagefilledarc($icon_im, $rx-1, $ry, $size, $size, 270,90, $col1->gdallocate($icon_im), IMG_ARC_PIE);
 					imagefilledarc($icon_im, $rx+1, $ry, $size, $size, 90,270, $col2->gdallocate($icon_im), IMG_ARC_PIE);
