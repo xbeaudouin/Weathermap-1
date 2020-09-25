@@ -27,11 +27,7 @@ $daemon_args="";
 
 // **************************************************************************************
 // THIS IS THE ONE LINE IN HERE YOU MIGHT HAVE TO CHANGE!
-if (!empty($config['rrdtool'])) {
-	$rrdtool = $config['rrdtool'];
-} else {
-	$rrdtool="/usr/bin/rrdtool";
-}
+$rrdtool="/usr/local/bin/rrdtool";
 // (on Windows, use / instead of \ in pathnames - c:/rrdtool/bin/rrdtool.exe for example)
 // **************************************************************************************
 
@@ -58,7 +54,8 @@ $long_opts=array
 		"sizedebug",
 		"dumpconfig=",
                 "daemon=",
-				"chdir="
+				"chdir=",
+				"rrdtool=",
 	);
 
 $args=$cg->readPHPArgv();
@@ -154,6 +151,9 @@ if (sizeof($gopts) > 0)
                  case '--chdir':
 					 	 $chdir = $o[1];
                          break;
+
+				case '--rrdtool':
+					$rrdtool = $o[1];
 			
         case '--define':
             preg_match("/^([^=]+)=(.*)\s*$/",$o[1],$matches);

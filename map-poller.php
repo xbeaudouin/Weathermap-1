@@ -61,6 +61,9 @@ if (is_dir($conf_dir)) {
                                 if (!empty($config['rrdcached'])) {
                                     $cmd = $cmd." --daemon ".$config['rrdcached'];
                                 }
+				if (!empty($config['rrdtool'])) {
+                                    $cmd = $cmd." --rrdtool ".$config['rrdtool'];
+				}
 				$fp = popen($cmd, 'r');
 				while (!feof($fp)) {
 					$read = fgets($fp);
